@@ -338,7 +338,7 @@ function Info() {
                   href="tel:+5513999999999"
                   className="mt-1 inline-block text-lg font-bold text-foreground transition-colors hover:text-primary"
                 >
-                  (13) 99999-9999
+                  +55 (13) 99739-8387
                 </a>
                 <p className="mt-1 text-xs text-muted-foreground">WhatsApp disponível</p>
               </div>

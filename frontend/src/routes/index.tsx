@@ -7,6 +7,7 @@ import gym1 from "@/assets/gym-1.jpg";
 import gym2 from "@/assets/gym-2.jpg";
 import gym3 from "@/assets/gym-3.jpg";
 import gym4 from "@/assets/gym-4.jpg";
+import gym5 from "@/assets/gym-5.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -30,6 +31,7 @@ const CAROUSEL = [
   { src: gym2, alt: "Interior da academia Elo Forte Team" },
   { src: gym3, alt: "Turma da Elo Forte Team saudando" },
   { src: gym4, alt: "Faixa preta com detalhes vermelhos" },
+  { src: gym5, alt: "Treino de jiu-jitsu no tatame" },
 ];
 
 function Landing() {

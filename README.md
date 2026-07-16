@@ -4,7 +4,6 @@
 
 ### Site institucional de uma academia de Jiu-Jitsu real, do zero ao ar.
 
-[![Live Demo](https://img.shields.io/badge/demo-online-2ea44f?style=for-the-badge)](https://eloforte-team.vercel.app)
 [![Vercel](https://img.shields.io/badge/deploy-vercel-black?style=for-the-badge&logo=vercel)](https://eloforte-team.vercel.app)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
 
@@ -38,7 +37,7 @@ A página funciona como a porta de entrada de um ecossistema maior — os links 
 |---|---|
 | Build | Vite |
 | Linguagem | JavaScript / TypeScript |
-| Estilo | CSS |
+| Estilo | TailwindCSS |
 | Deploy | Vercel |
 
 ## 🚀 Rodando localmente

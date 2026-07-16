@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import { Instagram, Facebook } from "lucide-react";
+import logo from "@/assets/logo.png";
 import heroImg from "@/assets/hero.jpg";
 import gym1 from "@/assets/gym-1.jpg";
 import gym2 from "@/assets/gym-2.jpg";
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { property: "og:image", content: "https://cbb87726-97d3-4048-8643-5134c51f046b.lovable.app" + logoAsset.url },
+      { property: "og:image", content: logo },
     ],
   }),
 });
@@ -21,7 +22,7 @@ const NAV = [
   { href: "#metodologia", label: "Metodologia" },
   { href: "#academia", label: "Academia" },
   { href: "#info", label: "Horários" },
-  { href: "#login", label: "Login" },
+  { href: "https://eloforteteam.com.br/cadastro", label: "Cadastro" },
 ];
 
 const CAROUSEL = [
@@ -42,7 +43,6 @@ function Landing() {
       <Info />
       <Social />
       <LoginCTA />
-      <LoginArea />
       <Footer />
     </div>
   );
@@ -66,34 +66,39 @@ function Header() {
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <img src={logoAsset.url} alt="Elo Forte Team" width={44} height={44} className="h-11 w-11 shrink-0 rounded-full" />
+          <img src={logo} alt="Elo Forte Team" width={44} height={44} className="h-11 w-11 shrink-0 rounded-full" />
           <span className="hidden truncate font-display text-lg font-bold tracking-widest sm:block">
             ELO FORTE <span className="text-primary">TEAM</span>
           </span>
         </a>
-        <nav className="hidden justify-center gap-8 md:flex">
+
+        <nav className="hidden justify-center gap-8 lg:flex">
           {NAV.map((n) => (
             <a key={n.href} href={n.href} className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
               {n.label}
             </a>
           ))}
         </nav>
-        <a
-          href="#login"
-          className="hidden rounded-md bg-red-gradient px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow-red-glow transition-transform hover:scale-105 md:inline-flex"
-        >
-          Já é aluno?
-        </a>
-        <button
-          aria-label="Abrir menu"
-          className="grid h-10 w-10 place-items-center rounded-md border border-border md:hidden"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span className="text-xl">{open ? "✕" : "☰"}</span>
-        </button>
+
+        <div className="flex items-center justify-end gap-2">
+          <a
+            href="https://eloforteteam.com.br/login"
+            className="hidden rounded-md bg-red-gradient px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-foreground shadow-red-glow transition-transform hover:scale-105 lg:inline-flex"
+          >
+            Já é aluno?
+          </a>
+
+          <button
+            aria-label="Abrir menu"
+            className="grid h-10 w-10 place-items-center rounded-md border border-border lg:hidden"
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span className="text-xl">{open ? "✕" : "☰"}</span>
+          </button>
+        </div>
       </div>
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur md:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 p-4">
             {NAV.map((n) => (
               <a
@@ -106,6 +111,8 @@ function Header() {
               </a>
             ))}
           </nav>
+
+          
         </div>
       )}
     </header>
@@ -136,7 +143,7 @@ function Hero() {
               href="#info"
               className="rounded-md bg-red-gradient px-6 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-red-glow transition-transform hover:scale-105"
             >
-              Agende sua aula experimental
+              Agende sua aula
             </a>
             <a
               href="#academia"
@@ -149,7 +156,7 @@ function Hero() {
         <div className="mx-auto lg:justify-self-end">
           <div className="relative">
             <div className="absolute -inset-8 rounded-full bg-primary/30 blur-3xl" />
-            <img src={logoAsset.url} alt="Escudo Elo Forte Team" width={420} height={420} className="relative h-64 w-64 sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px] drop-shadow-2xl" />
+            <img src={logo} alt="Escudo Elo Forte Team" width={420} height={420} className="relative h-64 w-64 sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px] drop-shadow-2xl" />
           </div>
         </div>
       </div>
@@ -384,15 +391,17 @@ function Social() {
         <SectionHeader eyebrow="Siga a equipe" title="Nas" accent="redes sociais" />
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
-            href="https://instagram.com/eloforteteam"
+            href="https://instagram.com/eloforteteampg"
             target="_blank"
             rel="noreferrer"
             className="group flex min-w-[220px] items-center gap-4 rounded-xl border border-border bg-card px-6 py-4 transition-all hover:border-primary hover:shadow-red-glow"
           >
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-gradient text-2xl">📷</div>
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-gradient text-2xl">
+              <Instagram className="h-6 w-6 text-primary-foreground" />
+            </div>
             <div className="text-left">
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Instagram</p>
-              <p className="font-display text-lg font-bold group-hover:text-primary">@eloforteteam</p>
+              <p className="font-display text-lg font-bold group-hover:text-primary">@eloforteteampg</p>
             </div>
           </a>
           <a
@@ -401,10 +410,12 @@ function Social() {
             rel="noreferrer"
             className="group flex min-w-[220px] items-center gap-4 rounded-xl border border-border bg-card px-6 py-4 transition-all hover:border-primary hover:shadow-red-glow"
           >
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-gradient text-2xl">👥</div>
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-red-gradient text-2xl">
+              <Facebook className="h-6 w-6 text-primary-foreground" />
+            </div>
             <div className="text-left">
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Facebook</p>
-              <p className="font-display text-lg font-bold group-hover:text-primary">/eloforteteam</p>
+              <p className="font-display text-lg font-bold group-hover:text-primary">/eloforteteampg</p>
             </div>
           </a>
         </div>
@@ -428,7 +439,7 @@ function LoginCTA() {
             Acesse sua área do aluno para acompanhar sua evolução, ver graduações e conferir avisos da equipe.
           </p>
           <a
-            href="#login"
+            href="https://eloforteteam.com.br/login"
             className="mt-8 inline-flex items-center gap-2 rounded-md bg-background px-8 py-4 text-sm font-bold uppercase tracking-widest text-foreground shadow-hard transition-transform hover:scale-105"
           >
             Entrar agora →
@@ -439,10 +450,14 @@ function LoginCTA() {
   );
 }
 
+{/*
 function LoginArea() {
+
+  {/* 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [msg, setMsg] = useState<string | null>(null);
+  const [msg, setMsg] = useState<string | null>(null); 
+
   return (
     <section id="login" className="scroll-mt-24 border-t border-border py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -453,8 +468,18 @@ function LoginArea() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Entre com seu e-mail cadastrado na academia para acessar o painel.
-            Novo por aqui? Fale com a recepção para receber seu acesso.
+            Novo por aqui? Fale com o mestre para obter seu acesso.
           </p>
+          <button>
+            <a
+            href="https://app.eloforteteam.com.br"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 w-full rounded-md bg-red-gradient px-6 py-3 text-sm font-bold uppercase tracking-widest text-primary-foreground shadow-red-glow transition-transform hover:scale-[1.01]"
+            >
+            Entrar
+            </a>
+          </button>
         </div>
 
         <form
@@ -502,27 +527,32 @@ function LoginArea() {
             </p>
           )}
         </form>
+
       </div>
     </section>
   );
-}
+*/}
 
 function Footer() {
   return (
     <footer className="border-t border-border bg-background py-10">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 text-sm sm:px-6 md:grid-cols-[auto_1fr_auto] md:items-center">
-        <div className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="Elo Forte Team" width={40} height={40} className="h-10 w-10 rounded-full" />
+      <div className="mx-auto grid max-w-7xl gap-4 px-4 text-sm sm:px-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+
+        <div className="flex items-center gap-3 justify-center md:justify-start">
+          <img src={logo} alt="Elo Forte Team" width={40} height={40} className="h-10 w-10 rounded-full" />
           <span className="font-display font-bold tracking-widest">
             ELO FORTE <span className="text-primary">TEAM</span>
           </span>
         </div>
+
         <p className="text-center text-muted-foreground">
-          Brazilian Jiu-Jitsu · Praia Grande — SP · Since 2024
-        </p>
-        <p className="text-center text-muted-foreground md:text-right">
           © {new Date().getFullYear()} Elo Forte Team
         </p>
+
+        <p className="text-center text-muted-foreground md:text-right">
+          Desenvolvido por <a href="https://www.linkedin.com/in/davirandos/" target="_blank" rel="noreferrer" className="font-semibold text-primary hover:underline">davirandos</a>.
+        </p>
+
       </div>
     </footer>
   );

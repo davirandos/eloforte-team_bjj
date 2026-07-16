@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Elo Forte Team — Jiu-Jitsu Brasileiro em Praia Grande" },
+      { title: "Elo Forte Team — Jiu-Jitsu em Praia Grande" },
       { name: "description", content: "Academia de Jiu-Jitsu Elo Forte Team em Praia Grande, SP. Aulas de segunda a sexta, 08h e 19h. Venha treinar com a gente." },
       { property: "og:title", content: "Elo Forte Team — Jiu-Jitsu Brasileiro" },
       { property: "og:description", content: "Academia de Jiu-Jitsu em Vila Caiçara, Praia Grande. Aulas 08h e 19h de seg a sex." },

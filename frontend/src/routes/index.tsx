@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroImg from "@/assets/hero.jpg";
+
+import { Analytics } from "@vercel/analytics/next"
+
 import gym1 from "@/assets/gym-1.jpg";
 import gym2 from "@/assets/gym-2.jpg";
 import gym3 from "@/assets/gym-3.jpg";

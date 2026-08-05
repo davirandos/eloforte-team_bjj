@@ -338,7 +338,7 @@ function Info() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary">Fale com o Mestre</p>
                 <a
-                  href="tel:+5513999999999"
+                  href="tel:+5513997398387"
                   className="mt-1 inline-block text-lg font-bold text-foreground transition-colors hover:text-primary"
                 >
                   +55 (13) 99739-8387
